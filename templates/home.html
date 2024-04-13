@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Main container styling */
+        #container {
+            display: flex;
+        }
+
+        /* Sidebar styling */
+        #sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navigation menu styling */
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-bottom: 10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .menu a:hover {
+            background-color: #ddd;
+        }
+
+        /* Content area styling */
+        #content {
+            width: 80%;
+            padding: 20px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Hide content sections initially */
+        .content {
+            display: none;
+        }
+    </style>
+    <script>
+        // JavaScript function to display the selected content section
+        function showContent(contentId) {
+            // Hide all content sections
+            document.querySelectorAll('.content').forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Show the requested content section
+            document.getElementById(contentId).style.display = 'block';
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header section -->
+    <header>
+        <h1>Inventory Management System</h1>
+    </header>
+
+    <!-- Main container with sidebar and content area -->
+    <div id="container">
+        <!-- Sidebar section -->
+        <div id="sidebar">
+            <ul class="menu">
+                <li><a href="javascript:void(0);" onclick="showContent('home')">Home</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('inventory')">Inventory</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('add-item')">Add Item</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('update-edit')">Update/Edit</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('delete')">Delete</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('reports')">Reports</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('user-admin')">User Admin</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('settings')">Settings</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('help-support')">Help & Support</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Content area section -->
+        <div id="content">
+            <!-- Home Section -->
+            <div id="home" class="content">
+                <h2>Welcome to the Inventory Management System</h2>
+                <p>Here you can manage your inventory items, reports, and more.</p>
+            </div>
+
+            <!-- Inventory Section -->
+            <div id="inventory" class="content">
+                <h2>Inventory</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Product inventory data will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add Item Section -->
+            <div id="add-item" class="content">
+                <h2>Add Item</h2>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Product Name" required>
+                    <input type="number" name="quantity" placeholder="Quantity" required>
+                    <input type="number" name="price" placeholder="Price" required>
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+
+            <!-- Update/Edit Section -->
+            <div id="update-edit" class="content">
+                <h2>Update/Edit Item</h2>
+                <p>Provide the functionality to update and edit inventory items.</p>
+            </div>
+
+            <!-- Delete Section -->
+            <div id="delete" class="content">
+                <h2>Delete Item</h2>
+                <p>Provide the functionality to delete inventory items.</p>
+            </div>
+
+            <!-- Reports Section -->
+            <div id="reports" class="content">
+                <h2>Reports</h2>
+                <p>Generate and view various reports for the inventory.</p>
+            </div>
+
+            <!-- User Admin Section -->
+            <div id="user-admin" class="content">
+                <h2>User Administration</h2>
+                <p>Manage user accounts and permissions here.</p>
+            </div>
+
+            <!-- Settings Section -->
+            <div id="settings" class="content">
+                <h2>Settings</h2>
+                <p>Configure application settings and preferences.</p>
+            </div>
+
+            <!-- Help and Support Section -->
+            <div id="help-support" class="content">
+                <h2>Help & Support</h2>
+                <p>Get help and support for the application.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <!-- <p>&copy; 2024 Inventory Management System</p> -->
+    </footer>
+</body>
+
+</html>
